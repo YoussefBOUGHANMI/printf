@@ -6,41 +6,41 @@
 /*   By: Youssef <youssef.boughanmi.pro@gmail.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/07 19:52:41 by Youssef           #+#    #+#             */
-/*   Updated: 2021/12/07 20:28:45 by Youssef          ###   ########.fr       */
+/*   Updated: 2021/12/09 10:24:11 by Youssef          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
+#include"my_printf.h"
 
 char	*flag_parser(char *str)
 {
 	char	*tmp_dst;
-	
+
 	if (*str == '#')
 		tmp_dst = flag_sharp(str);
 	else if (*str == ' ')
 		tmp_dst = flag_space(str);
-	else 
+	else
 		tmp_dst = flag_plus(str);
-	return (tmp_dst)
+	return (tmp_dst);
+}
 
 char	*drapeau_parser(char *str)
 {
-	char *tmp_dst;
+	char	*tmp_dst;
 
 	if (*str == '-')
 		tmp_dst = drapeau_minus(*str);
 	else if (*str == '0')
 		tmp_dst = drapeau_zero(*str);
-	else 
+	else
 		tmp_dst = drapeau_point(*str);
 	return (tmp_dst);
 }
 
-
-char	*ft_parser(char *str)
+char	*parm_parser(char *str)
 {
 	char	*tmp_dst;
-	
+
 	if (*str == 'c')
 		tmp_dst = fonc_char(*str);
 	else if (*str == 's')

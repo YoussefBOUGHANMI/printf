@@ -6,14 +6,14 @@
 /*   By: Youssef <youssef.boughanmi.pro@gmail.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/07 14:53:36 by Youssef           #+#    #+#             */
-/*   Updated: 2021/12/07 20:25:44 by Youssef          ###   ########.fr       */
+/*   Updated: 2021/12/09 10:55:45 by Youssef          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include<stdio.h>
 #include<stdlib.h>
 #include<stdarg.h>
-
+#include"my_printf.h>
 
 void test_2(va_list argptr)
 {
@@ -21,18 +21,6 @@ void test_2(va_list argptr)
 	nb = va_arg(argptr , int);
 	printf("%d\n" , nb);
 
-}
-
-
-
-
-int	ft_isparm(char c)
-{
-	if ((c == 'c') | (c == 's') | (c == 'p') | (c == 'd') 
-	| (c == 'i') | (c == 'u') | (c == 'x') | (c == 'X') | (c == '%'))
-	return(1);
-
-	return (0);
 }
 
 
