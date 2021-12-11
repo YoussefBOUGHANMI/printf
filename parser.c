@@ -6,28 +6,28 @@
 /*   By: Youssef <youssef.boughanmi.pro@gmail.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/07 19:52:41 by Youssef           #+#    #+#             */
-/*   Updated: 2021/12/10 19:04:11 by Youssef          ###   ########.fr       */
+/*   Updated: 2021/12/11 09:50:49 by Youssef          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include"my_printf.h"
 
-char	*parm_parser(char c, char *dst, va_list argptr)
+int	parm_parser(char c, va_list argptr)
 {
-	char	*tmp_dst;
+	int	add_char;
 
 	if (c == 'c')
-		tmp_dst = fonc_char(dst, argptr);
+		add_char = fonc_char(argptr);
 	else if (c == 's')
-		tmp_dst = fonc_str(dst, argptr);
+		add_char = fonc_str(argptr);
 	else if (c == 'p')
-		tmp_dst = fonc_pointer(dst, argptr);
+		add_char = fonc_pointer(argptr);
 	else if ((c == 'd') | (c == 'i'))
-		tmp_dst = fonc_integer(dst, argptr);
+		add_char = fonc_integer(argptr);
 	else if (c == 'u')
-		tmp_dst = fonc_unsigned(dst, argptr);
+		add_char = fonc_unsigned(argptr);
 	else if ((c == 'x') | (c == 'X'))
-		tmp_dst = fonc_hexa(dst, argptr, c);
+		add_char = fonc_hexa(argptr, c);
 	else if (c == '%')
-		tmp_dst = ft_strncat(dst, "%", 1);
-	return (tmp_dst);
+		add_char = fonc_percentage();
+	return (add_char);
 }

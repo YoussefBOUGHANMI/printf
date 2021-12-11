@@ -1,29 +1,37 @@
 SRCS = my_printf.c ft_putstr.c \
 	utils_1.c utils_2.c \
 	ft_longtohexa.c ft_unsitoa.c \
-	parser.c libft.a
+	parser.c
 
 
 OBJS = $(SRCS:.c=.o)
 
-CFLAGS = -Wall -Wextra -Werror -I.
+CC = gcc
+
+FLAGS = -c -Wall -Wextra -Werror
+
+INCLUDES = -I.
 
 NAME = libftprintf.a
 
-all:			$(NAME)
+OBJS = $(SRCS:.c=.o)
 
-$(NAME):		$(OBJS)
-				ar rcs $(NAME) $(OBJS)
+$(NAME): $(OBJS)
+	$(MAKE) bonus -C ./libft
+	cp libft/libft.a $(NAME)
+	$(CC) $(FLAGS) $(INCLUDES) $(SRCS)
+	ar -rcs $(NAME) $(OBJS)
 
-clean:
-				rm -f $(OBJS) $(BONUS_OBJS)
+all : $(NAME)
 
-fclean:			clean
-				rm -f $(NAME)
+clean :
+	$(MAKE) clean -C ./libft 
+	rm -rf $(OBJS)
 
-re:			fclean $(NAME)
+fclean : clean
+	$(MAKE) fclean -C ./libft
+	rm -rf $(NAME)
 
-bonus:			$(OBJS) $(BONUS_OBJS)
-				ar rcs $(NAME) $(OBJS) $(BONUS_OBJS)
+re : fclean all
 
-.PHONY:			all clean fclean re bonus
+.PHONY:			all clean fclean re

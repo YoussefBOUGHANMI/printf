@@ -6,7 +6,7 @@
 /*   By: Youssef <youssef.boughanmi.pro@gmail.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/10 09:55:05 by Youssef           #+#    #+#             */
-/*   Updated: 2021/12/10 14:06:28 by Youssef          ###   ########.fr       */
+/*   Updated: 2021/12/11 17:21:44 by Youssef          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,20 +25,24 @@ int	len_l(long n)
 	return (i);
 }
 
-char	*ft_unsitoa(unsigned int nbr)
+int	ft_unsitoa(unsigned int nbr)
 {
 	char	*a;
 	int		len;
+	int		add_char;
 	long	n;
 
 	n = nbr;
 	len = len_l(n);
 	a = malloc((len + 1) * sizeof(char));
-	while (len >= 0)
+	while (len)
 	{
 		len--;
 		a[len] = (n % 10) + 48;
 		n = n / 10;
 	}
-	return (a);
+	add_char = ft_strlen(a);
+	ft_putstr(a);
+	free(a);
+	return (add_char);
 }

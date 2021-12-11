@@ -6,7 +6,7 @@
 /*   By: Youssef <youssef.boughanmi.pro@gmail.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/07 20:26:48 by Youssef           #+#    #+#             */
-/*   Updated: 2021/12/10 19:13:05 by Youssef          ###   ########.fr       */
+/*   Updated: 2021/12/11 10:19:39 by Youssef          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,24 +25,22 @@ typedef struct s_list
 	struct s_list	*next;
 }		t_list;
 
-char	*parm_parser(char c, char *dst, va_list argptr);
-int		ift_isparm(char c);
-char	*fonc_str(char *str, va_list argptr);
-int		ft_printf(const char *str, ...);
-char	*fonc_char(char *dst, va_list argptr);
-char	*fonc_str(char *dst, va_list argptr);
-char	*fonc_pointer(char *dst, va_list argptr);
-char	*fonc_digit(char *dst, va_list argptr);
-char	*fonc_integer(char *dst, va_list argptr);
-char	*fonc_unsigned(char *dst, va_list argptr);
-char	*fonc_hexa(char *dst, va_list argptr, char c);
-char	*fonc_percentage(char *dst, va_list argptr);
-char	*ft_strncat(char *dst, char *src, int size);
-size_t	ft_strlen(char const *str);
+int	ft_isparm(char c);
+int	ft_printf(const char *str, ...);
+int	parm_parser(char c, va_list argptr);
+int	fonc_str(va_list argptr);
+int	fonc_char(va_list argptr);
+int	fonc_pointer(va_list argptr);
+int	fonc_integer(va_list argptr);
+int	fonc_unsigned(va_list argptr);
+int	fonc_hexa(va_list argptr, char type);
+int	fonc_percentage();
+int	ft_longtohexa(long n, char type);
+int	ft_unsitohexa(unsigned int nbr, char type);
+int	ft_unsitoa(unsigned int nbr);
 char	*ft_itoa(int n);
-char	*ft_unsitoa(unsigned int n);
-char	*ft_unsitohexa(unsigned int n, char type);
-char	*ft_longtohexa(long n, char type);
+size_t	ft_strlen(char const *str);
 void	ft_putstr(char	*str);
+void	ft_putchar(char c);
 
 #endif

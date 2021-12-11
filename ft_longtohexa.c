@@ -6,12 +6,12 @@
 /*   By: Youssef <youssef.boughanmi.pro@gmail.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/10 13:43:24 by Youssef           #+#    #+#             */
-/*   Updated: 2021/12/10 19:01:29 by Youssef          ###   ########.fr       */
+/*   Updated: 2021/12/11 17:17:09 by Youssef          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include"my_printf.h"
 
-char	lower_base(int nbr)
+int	lower_base(int nbr)
 {
 	char	c;
 
@@ -46,16 +46,18 @@ int	len_hexa(long n)
 	return (i);
 }
 
-char	*ft_unsitohexa(unsigned int nbr, char type)
+
+int	ft_unsitohexa(unsigned int nbr, char type)
 {
 	char	*a;
 	int		len;
 	long	n;
+	int	add_char;
 
 	n = nbr;
 	len = len_hexa(n);
 	a = malloc((len + 1) * sizeof(char));
-	while (len >= 0)
+	while (len)
 	{
 		len--;
 		if (type == 'X')
@@ -64,17 +66,22 @@ char	*ft_unsitohexa(unsigned int nbr, char type)
 			a[len] = lower_base(n % 16);
 		n = n / 16;
 	}
-	return (a);
+	add_char = ft_strlen(a);
+	ft_putstr(a);
+	free(a);
+	return (add_char);
 }
 
-char	*ft_longtohexa(long n, char type)
+int	ft_longtohexa(long n, char type)
 {
 	char	*a;
 	int		len;
+	int		add_char;
 
 	len = len_hexa(n);
 	a = malloc((len + 1) * sizeof(char));
-	while (len >= 0)
+	a[len] = '\0';
+	while (len)
 	{
 		len--;
 		if (type == 'X')
@@ -83,5 +90,8 @@ char	*ft_longtohexa(long n, char type)
 			a[len] = lower_base(n % 16);
 		n = n / 16;
 	}
-	return (a);
+	add_char = ft_strlen(a);
+	ft_putstr(a);
+	free(a);
+	return (add_char);
 }
