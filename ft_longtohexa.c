@@ -6,7 +6,7 @@
 /*   By: Youssef <youssef.boughanmi.pro@gmail.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/10 13:43:24 by Youssef           #+#    #+#             */
-/*   Updated: 2021/12/13 18:52:25 by Youssef          ###   ########.fr       */
+/*   Updated: 2021/12/13 19:09:47 by Youssef          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include"ft_printf.h"
@@ -46,13 +46,12 @@ int	len_hexa(long n)
 	return (i);
 }
 
-
 int	ft_unsitohexa(unsigned int nbr, char type)
 {
 	char	*a;
 	int		len;
-	unsigned long	n;
-	int	add_char;
+	int		add_char;
+	long	n;
 
 	n = nbr;
 	len = len_hexa(n);
