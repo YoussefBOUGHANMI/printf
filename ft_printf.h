@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   my_printf.h                                        :+:      :+:    :+:   */
+/*   ft_printf.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: Youssef <youssef.boughanmi.pro@gmail.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/07 20:26:48 by Youssef           #+#    #+#             */
-/*   Updated: 2021/12/11 10:19:39 by Youssef          ###   ########.fr       */
+/*   Updated: 2021/12/11 18:47:42 by Youssef          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef MY_PRINTF_H
-# define MY_PRINTF_H
+#ifndef FT_PRINTF_H
+# define FT_PRINTF_H
 
 # include <unistd.h>
 # include <stdlib.h>
@@ -35,7 +35,7 @@ int	fonc_integer(va_list argptr);
 int	fonc_unsigned(va_list argptr);
 int	fonc_hexa(va_list argptr, char type);
 int	fonc_percentage();
-int	ft_longtohexa(long n, char type);
+int	ft_longtohexa(unsigned long n, char type);
 int	ft_unsitohexa(unsigned int nbr, char type);
 int	ft_unsitoa(unsigned int nbr);
 char	*ft_itoa(int n);

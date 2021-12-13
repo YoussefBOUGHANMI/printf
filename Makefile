@@ -1,4 +1,4 @@
-SRCS = my_printf.c ft_putstr.c \
+SRCS =  ft_printf.c ft_putstr.c \
 	utils_1.c utils_2.c \
 	ft_longtohexa.c ft_unsitoa.c \
 	parser.c

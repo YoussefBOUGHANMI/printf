@@ -6,10 +6,10 @@
 /*   By: Youssef <youssef.boughanmi.pro@gmail.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/10 13:43:24 by Youssef           #+#    #+#             */
-/*   Updated: 2021/12/11 17:17:09 by Youssef          ###   ########.fr       */
+/*   Updated: 2021/12/13 18:52:25 by Youssef          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include"my_printf.h"
+#include"ft_printf.h"
 
 int	lower_base(int nbr)
 {
@@ -51,7 +51,7 @@ int	ft_unsitohexa(unsigned int nbr, char type)
 {
 	char	*a;
 	int		len;
-	long	n;
+	unsigned long	n;
 	int	add_char;
 
 	n = nbr;
@@ -72,7 +72,7 @@ int	ft_unsitohexa(unsigned int nbr, char type)
 	return (add_char);
 }
 
-int	ft_longtohexa(long n, char type)
+int	ft_longtohexa(unsigned long n, char type)
 {
 	char	*a;
 	int		len;

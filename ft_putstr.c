@@ -6,11 +6,11 @@
 /*   By: Youssef <youssef.boughanmi.pro@gmail.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/10 18:22:16 by Youssef           #+#    #+#             */
-/*   Updated: 2021/12/10 18:29:08 by Youssef          ###   ########.fr       */
+/*   Updated: 2021/12/11 18:30:52 by Youssef          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"my_printf.h"
+#include"ft_printf.h"
 
 void	ft_putchar(char c)
 {
@@ -25,3 +25,11 @@ void	ft_putstr(char	*str)
 		str++;
 	}
 }
+/*
+int main()
+{
+	char *test = NULL;
+	ft_putstr(test);
+
+
+}*/

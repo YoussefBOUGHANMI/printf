@@ -10,7 +10,7 @@ int main()
 
 int		a = -4;
 	int		b = 0;
-	char	c = 'a';
+	char	c = 'o';
 	int		d = 2147483647;
 	int		e = -2147483648;
 	int		f = 42;
@@ -21,7 +21,7 @@ int		a = -4;
 	int		k = 123456789;
 	int		l = 0;
 	int		m = -12345678;
-	char	*n = "abcdefghijklmnop";
+	char	*n = NULL;
 	char	*o = "-a";
 	char	*p = "-12";
 	char	*q = "0";
@@ -34,10 +34,12 @@ int		a = -4;
 
 
 
+	ft_printf("This %p is even stranger\n", (void *)-1);
+	printf("This %p is even stranger\n\n", (void *)-1);
 
+//printf("len : %d\n" , ft_printf("%i, %d, %d, %d, %d, %s, %c, %d, %u, %x, %X", i, j, k, l, m, n, c, c, j, j, j));
 
-printf("len : %d\n" , ft_printf("%i, %d, %d, %d, %d, %s, %c, %d, %u, %x, %X", i, j, k, l, m, n, c, c, j, j, j));
-
-printf("len : %d\n" , printf("%i, %d, %d, %d, %d, %s, %c, %d, %u, %x, %X", i, j, k, l, m, n, c, c, j, j, j));
-
+//printf("len : %d\n" , printf("%i, %d, %d, %d, %d, %s, %c, %d, %u, %x, %X", i, j, k, l, m, n, c, c, j, j, j));
+	printf(" %p \n", -1);
+	ft_printf("%p \n", -1);
 }
