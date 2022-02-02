@@ -6,7 +6,7 @@
 /*   By: Youssef <youssef.boughanmi.pro@gmail.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/07 19:51:47 by Youssef           #+#    #+#             */
-/*   Updated: 2021/12/13 19:06:30 by Youssef          ###   ########.fr       */
+/*   Updated: 2022/02/02 18:32:44 by yboughan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include"ft_printf.h"
@@ -40,6 +40,11 @@ int	fonc_pointer(va_list argptr)
 	int		add_char;
 
 	pointer = va_arg(argptr, long);
+	if (pointer == 0)
+	{
+		ft_putstr("0x0");
+		return (3);
+	}
 	if (!pointer)
 	{
 		ft_putstr("(nil)");

@@ -6,7 +6,7 @@
 /*   By: Youssef <youssef.boughanmi.pro@gmail.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/10 09:55:05 by Youssef           #+#    #+#             */
-/*   Updated: 2021/12/11 17:40:55 by Youssef          ###   ########.fr       */
+/*   Updated: 2022/02/02 18:16:09 by yboughan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,7 @@ int	ft_unsitoa(unsigned int nbr)
 	n = nbr;
 	len = len_l(n);
 	a = malloc((len + 1) * sizeof(char));
+	a[len] = 0;
 	while (len)
 	{
 		len--;

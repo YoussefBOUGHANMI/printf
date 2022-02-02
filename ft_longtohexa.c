@@ -6,7 +6,7 @@
 /*   By: Youssef <youssef.boughanmi.pro@gmail.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/10 13:43:24 by Youssef           #+#    #+#             */
-/*   Updated: 2021/12/13 19:09:47 by Youssef          ###   ########.fr       */
+/*   Updated: 2022/02/02 18:25:54 by yboughan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include"ft_printf.h"
@@ -56,6 +56,7 @@ int	ft_unsitohexa(unsigned int nbr, char type)
 	n = nbr;
 	len = len_hexa(n);
 	a = malloc((len + 1) * sizeof(char));
+	a[len] = 0;
 	while (len)
 	{
 		len--;
